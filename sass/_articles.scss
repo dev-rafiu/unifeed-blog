@@ -1,0 +1,63 @@
+@use "mixins";
+
+article {
+  .title {
+    margin-top: 1rem;
+  }
+
+  .intro {
+    line-height: 1.4;
+    margin: 0.5rem 0;
+  }
+
+  .split {
+    @include mixins.flex;
+    gap: 0.5rem;
+
+    .avarta {
+      width: mixins.pxToRem(40);
+      border-radius: 50%;
+    }
+
+    .name,
+    .status {
+      font-size: mixins.pxToRem(14);
+    }
+  }
+
+  .status,
+  .intro {
+    color: var(--clr-fade);
+  }
+}
+
+.main-article {
+  // align-items: unset;
+  align-items: flex-start;
+  flex-direction: column;
+
+  .img-container {
+    height: mixins.pxToRem(250);
+
+    img {
+      @include mixins.articleImg;
+    }
+  }
+}
+
+.sub-articles {
+  @include mixins.flex;
+  align-items: unset;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+
+  .img-container {
+    height: mixins.pxToRem(220);
+
+    img {
+      @include mixins.articleImg;
+      border-radius: var(--radius);
+    }
+  }
+}

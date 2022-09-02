@@ -1,0 +1,15 @@
+@use "mixins";
+
+.main .container {
+  width: min(90%, mixins.pxToRem(1000));
+  margin: 0 auto;
+}
+.btn {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}

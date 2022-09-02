@@ -1,0 +1,41 @@
+:root {
+  // colors
+  --white: #fff;
+  --black: #000;
+  --clr-fade: hsl(0, 0%, 50%);
+  --clr-secondary: hsl(25, 90%, 55%);
+
+  //   font-sizes
+  --fs-regular: 1rem;
+  --fs-h1: clamp(1rem, 2vw + 1rem, 2rem);
+  --fs-h2: 1.5rem;
+  --fs-h3: 1.125rem;
+
+  --radius: 5px;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+h1 {
+  font-size: var(--fs-h1);
+  line-height: 1.1;
+}
+body {
+  background-color: var(--white);
+  font-family: "Manrope", sans-serif;
+}

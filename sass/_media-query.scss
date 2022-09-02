@@ -1,0 +1,80 @@
+@use "mixins";
+
+// tablets mode
+@include mixins.breakpoint-up(tablet) {
+  .main-header {
+    .menu-btn {
+      display: none;
+    }
+
+    .nav {
+      position: static;
+      transition: none;
+      height: auto;
+      width: auto;
+      z-index: auto;
+      background: transparent;
+      transform: translateX(0);
+
+      ul {
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  .footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+  }
+}
+
+// desktop mode
+@include mixins.breakpoint-up(desktop) {
+  .sub-articles,
+  .main-article {
+    flex-direction: row;
+  }
+
+  .main-article {
+    @include mixins.flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+
+    > *:nth-of-type(1) {
+      flex: 1 1 40%;
+    }
+    > *:nth-of-type(2) {
+      flex: 1 1 60%;
+    }
+    .img-container {
+      height: mixins.pxToRem(220);
+    }
+
+    img {
+      border-radius: var(--radius);
+    }
+
+    .title {
+      margin-top: 0;
+    }
+
+    .intro {
+      max-width: mixins.pxToRem(500);
+    }
+  }
+
+  .sub-articles {
+    > * {
+      width: 100%;
+    }
+
+    .title {
+      max-width: mixins.pxToRem(300);
+    }
+  }
+}
